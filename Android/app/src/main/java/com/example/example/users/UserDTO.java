@@ -1,9 +1,16 @@
 package com.example.example.users;
 
-import lombok.Data;
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
+import lombok.Data;
 @Data
 public class UserDTO {
-    private String image;
+    @SerializedName("photo")
+    @Expose
+    private String photo;
+
+    @SerializedName("email")
+    @Expose
     private String email;
 }
