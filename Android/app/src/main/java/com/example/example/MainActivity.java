@@ -123,6 +123,11 @@ public class MainActivity extends AppCompatActivity {
                     public void onResponse( Call<UserRes> call, Response<UserRes> response) {
                         if(response.isSuccessful()) {
                             UserRes data = response.body();
+                            txtEmail.setText("");
+                            txtFName.setText("");
+                            txtSName.setText("");
+                            txtPhone.setText("");
+                            txtPassword.setText("");
                         }
                         else {
                             try {
@@ -151,7 +156,7 @@ public class MainActivity extends AppCompatActivity {
         i.setAction(Intent.ACTION_GET_CONTENT);
 
         startActivityForResult(Intent.createChooser(i, "Select Picture"), SELECT_PICTURE);
-        view.setVisibility(View.GONE);
+        //view.setVisibility(View.GONE);
     }
 
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
